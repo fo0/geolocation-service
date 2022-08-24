@@ -1,57 +1,61 @@
 package me.fo0.geolocation.service;
 
+import static org.apache.commons.lang3.StringUtils.defaultString;
+
 import com.maxmind.geoip2.DatabaseReader;
-import com.maxmind.geoip2.exception.GeoIp2Exception;
 import com.maxmind.geoip2.model.CountryResponse;
-import java.io.IOException;
 import java.net.InetAddress;
-import java.net.UnknownHostException;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@Log4j2
 public class GeoLocationService {
 
   @Autowired
   private DatabaseReader reader;
 
   public CountryResponse countryResponse(InetAddress inetAddress) {
+    log.trace("resolving ip: {}", inetAddress);
+
+    if (inetAddress == null) {
+      return null;
+    }
+
     try {
-      return reader.country(inetAddress);
-    } catch (IOException e) {
-    } catch (GeoIp2Exception e) {
+      final CountryResponse response = reader.country(inetAddress);
+      log.debug("ip resolved {} -> {}", inetAddress, extractCountryCode(response));
+      return response;
+    } catch (Exception ignored) {
     }
 
     return null;
   }
 
   public CountryResponse countryResponse(String ipAddress) {
-    InetAddress inetAddress;
     try {
-      inetAddress = InetAddress.getByName(ipAddress);
+      InetAddress inetAddress = InetAddress.getByName(ipAddress);
       return countryResponse(inetAddress);
-    } catch (UnknownHostException e) {
+    } catch (Exception ignored) {
     }
     return null;
   }
 
 
   public String countryIsoCode(String ipAddress) {
-    CountryResponse countryResponse = countryResponse(ipAddress);
-    if (countryResponse != null) {
-      return countryResponse.getCountry()
-                            .getIsoCode();
-    }
-    return null;
+    return extractCountryCode(countryResponse(ipAddress));
   }
 
   public String countryIsoCode(InetAddress inetAddress) {
-    CountryResponse countryResponse = countryResponse(inetAddress);
-    if (countryResponse != null) {
-      return countryResponse.getCountry()
-                            .getIsoCode();
-    }
-    return null;
+    return extractCountryCode(countryResponse(inetAddress));
   }
 
+
+  private static String extractCountryCode(CountryResponse countryResponse) {
+    return (countryResponse != null && countryResponse.getCountry() != null) ?
+        //
+        defaultString(countryResponse.getCountry()
+                                     .getIsoCode(), "N/A") : "N/A";
+  }
 }
