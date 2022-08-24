@@ -18,7 +18,6 @@ public class GeoLocationService {
 
   public CountryResponse countryResponse(InetAddress inetAddress) {
     log.trace("resolving ip: {}", inetAddress);
-
     if (inetAddress == null) {
       return null;
     }
