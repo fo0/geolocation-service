@@ -17,13 +17,12 @@ import org.springframework.core.io.Resource;
 @RequiredArgsConstructor
 @Log4j2
 public class GeoDbConfiguration {
-
   private final GeoDbProperties properties;
 
   @Bean
   public DatabaseReader geoIpDatabaseReader() throws Exception {
     final Resource database = properties.getDatabase();
-    log.info("loading database: {}", database);
+    log.info("loading database: {}", database.getURI());
     return new DatabaseReader.Builder(database.getInputStream()).build();
   }
 

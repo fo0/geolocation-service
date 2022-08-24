@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 @Log4j2
 public class GeoLocationService {
 
+  public static final String EMPTY = "N/A";
   @Autowired
   private DatabaseReader reader;
 
@@ -56,6 +57,6 @@ public class GeoLocationService {
     return (countryResponse != null && countryResponse.getCountry() != null) ?
         //
         defaultString(countryResponse.getCountry()
-                                     .getIsoCode(), "N/A") : "N/A";
+                                     .getIsoCode(), EMPTY) : EMPTY;
   }
 }
