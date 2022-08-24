@@ -46,3 +46,4 @@ print("Writing database")
 with open("Geoacumen-Country.mmdb", "wb") as f:
     enc.write(f)
 os.remove("ip2asn-combined.tsv")
+os.system("mv Geoacumen-Country.mmdb src/main/resources/Geoacumen-Country.mmdb")
