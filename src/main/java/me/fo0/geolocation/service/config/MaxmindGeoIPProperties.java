@@ -1,7 +1,6 @@
 package me.fo0.geolocation.service.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 
 @ConfigurationProperties(prefix = MaxmindGeoIPProperties.PROPERTY_PREFIX)

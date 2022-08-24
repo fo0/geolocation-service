@@ -4,7 +4,6 @@ import static me.fo0.geolocation.service.config.MaxmindGeoIPProperties.PROPERTY_
 
 import com.maxmind.geoip2.DatabaseReader;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
