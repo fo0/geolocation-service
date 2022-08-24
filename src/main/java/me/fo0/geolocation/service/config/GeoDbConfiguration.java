@@ -23,10 +23,7 @@ public class GeoDbConfiguration {
   @Bean
   public DatabaseReader geoIpDatabaseReader() throws Exception {
     final Resource database = properties.getDatabase();
-    log.info("loading database: {}",
-             database.getFile()
-                     .getPath());
-
+    log.info("loading database: {}", database);
     return new DatabaseReader.Builder(database.getInputStream()).build();
   }
 
