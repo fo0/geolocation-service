@@ -27,6 +27,7 @@ public class GeoLocationService {
       log.debug("ip resolved {} -> {}", inetAddress, extractCountryCode(response));
       return response;
     } catch (Exception ignored) {
+      log.error("error resolving ip: {}", inetAddress);
     }
 
     return null;
