@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 
 @ConfigurationProperties(prefix = MaxmindGeoIPProperties.PROPERTY_PREFIX)
-@Configuration
 public class MaxmindGeoIPProperties {
 	
 	public static final String PROPERTY_PREFIX = "maxmind.geoip";

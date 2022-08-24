@@ -6,16 +6,14 @@ import com.maxmind.geoip2.model.CountryResponse;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class GeoLocationService {
 
+  @Autowired
   private DatabaseReader reader;
-
-  public GeoLocationService(DatabaseReader geoIpDatabaseReader) {
-    this.reader = geoIpDatabaseReader;
-  }
 
   public CountryResponse countryResponse(InetAddress inetAddress) {
     try {
