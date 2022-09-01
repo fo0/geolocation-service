@@ -1,6 +1,11 @@
 # geolocation-service
 Spring Rest Service based on MaxMind & GH Repo https://github.com/geoacumen/geoacumen-country
 
+# Example
+```bash
+curl -X GET localhost:8080/?ip=8.8.8.8
+```
+
 # docker-compose
 ```yml
 version: "3"
