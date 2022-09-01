@@ -1,6 +1,9 @@
 # geolocation-service
 Spring Rest Service based on MaxMind & GH Repo https://github.com/geoacumen/geoacumen-country
 
+# Updates?
+Every Sunday, check [CI/CD](https://github.com/fo0/geolocation-service/blob/master/.github/workflows/update_db.yml)
+
 # Example
 ```bash
 curl -X GET localhost:8080/?ip=8.8.8.8
