@@ -8,10 +8,10 @@ services:
   geolocation-service:
     image: ghcr.io/fo0/geolocation-service
     environment:
-      SPRING_APPLICATION_NAME=geolocation
-      SERVER_PORT=8080
-      MAXMIND_GEOIP_DATABASE=classpath:Geoacumen-Country.mmdb
-      LOGGING_LEVEL_ME_FO0=ERROR
+      SPRING_APPLICATION_NAME: geolocation
+      SERVER_PORT: 8080
+      MAXMIND_GEOIP_DATABASE: classpath:Geoacumen-Country.mmdb
+      LOGGING_LEVEL_ME_FO0: ERROR
     ports:
       - "8080:8080"
     expose:
