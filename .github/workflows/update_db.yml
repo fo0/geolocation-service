@@ -7,8 +7,8 @@ on:
         description: 'Reason for job'
         required: false
   schedule:
-#     - cron: '*/10 * * * *'  # all 5min
-     - cron: '0 0 * * 0'  # weekly (At 00:00 on Sunday.)
+     - cron: '*/10 * * * *'  # all 5min
+#     - cron: '0 0 * * 0'  # weekly (At 00:00 on Sunday.)
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
