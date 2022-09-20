@@ -6,7 +6,11 @@ Every Sunday, check [CI/CD](https://github.com/fo0/geolocation-service/blob/mast
 
 # Example
 ```bash
+# simple
 curl -X GET localhost:8080/?ip=8.8.8.8
+
+# or with details
+curl -X GET localhost:8080/details?ip=8.8.8.8
 ```
 
 # docker-compose
