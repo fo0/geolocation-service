@@ -43,7 +43,6 @@ public class GeoLocationService {
     return null;
   }
 
-
   public String countryIsoCode(String ipAddress) {
     return extractCountryCode(countryResponse(ipAddress));
   }
