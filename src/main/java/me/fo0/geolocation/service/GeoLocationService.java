@@ -5,17 +5,18 @@ import static org.apache.commons.lang3.StringUtils.defaultString;
 import com.maxmind.geoip2.DatabaseReader;
 import com.maxmind.geoip2.model.CountryResponse;
 import java.net.InetAddress;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 @Log4j2
+@RequiredArgsConstructor
 public class GeoLocationService {
 
   public static final String EMPTY = "N/A";
-  @Autowired
-  private DatabaseReader reader;
+  private final DatabaseReader reader;
 
   public CountryResponse countryResponse(InetAddress inetAddress) {
     log.trace("resolving ip: {}", inetAddress);
