@@ -4,7 +4,7 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.core.io.Resource;
 
-@ConfigurationProperties(prefix = GeoDbProperties.PROPERTY_PREFIX)
+@ConfigurationProperties(GeoDbProperties.PROPERTY_PREFIX)
 @Data
 public class GeoDbProperties {
 
