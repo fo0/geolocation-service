@@ -26,8 +26,6 @@ jobs:
 
       - name: Build ui
         run: mvn -B --no-transfer-progress clean package -DskipTests
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: mr-smithers-excellent/docker-build-push@v5
         name: Build & push Docker image
