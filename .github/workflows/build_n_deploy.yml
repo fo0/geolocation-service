@@ -32,7 +32,7 @@ jobs:
       - uses: mr-smithers-excellent/docker-build-push@v5
         name: Build & push Docker image
         with:
-          image: ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}
+          image: ${{ github.event.repository.name }}
           tags: ${{ steps.date.outputs.date }}, latest
           registry: ghcr.io
           dockerfile: Dockerfile
