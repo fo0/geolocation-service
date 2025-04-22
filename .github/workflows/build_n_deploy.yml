@@ -34,6 +34,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/fo0/geolocation-service:latest
+          tags: ghcr.io/fo0/geolocation-service:latest, ghcr.io/fo0/geolocation-service:${{ steps.date.outputs.date }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
