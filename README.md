@@ -1,5 +1,5 @@
 # geolocation-service
-Spring Rest Service based on MaxMind & GH Repo https://github.com/geoacumen/geoacumen-country
+Spring Rest Service for IP-based geolocation, powered by MaxMind & [geoacumen-country](https://github.com/geoacumen/geoacumen-country).
 
 # Updates?
 Every Sunday, check [CI/CD](https://github.com/fo0/geolocation-service/blob/master/.github/workflows/update_db.yml)
