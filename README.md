@@ -5,6 +5,8 @@ Spring Rest Service based on MaxMind & GH Repo https://github.com/geoacumen/geoa
 
 - x
 
+- xxx
+
 # Updates?
 Every Sunday, check [CI/CD](https://github.com/fo0/geolocation-service/blob/master/.github/workflows/update_db.yml)
 
